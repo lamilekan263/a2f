@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy,  } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+const Layout = lazy(() => import("./containers/Layout"));
+const Page404 = lazy(() => import("./pages/404"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+   
+    <Switch>
+      <Redirect exact from="/" to="/app/portfolio" />
+      <Layout />
+      <Route path="*" element={Page404} />
+    </Switch>
+
   );
 }
 

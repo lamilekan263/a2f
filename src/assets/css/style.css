@@ -1,0 +1,102 @@
+@import url("fonts.css");
+html {
+  font-family: 'Archivo' !important;
+  height: 100%;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+body {
+  font-family: 'Archivo' !important;
+  height: 100%;
+  overflow-y:scroll;
+  position: relative;
+}
+select {
+   -webkit-appearance:initial !important;
+   appearance: inherit !important; 
+}
+button {
+  /*-webkit-appearance: none !important;*/
+}
+.table-div {
+  border-radius: 0 !important;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.logo {
+  width: 80%;
+  margin: 0 auto;
+}
+.card{
+  border: none !important;
+}
+/* HIDE RADIO */
+[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type="radio"] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type="radio"]:checked + img {
+  outline: 2px solid #08c;
+}
+input,
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.bg-card {
+  background: url("../img/credit-card-2.png");
+  background-size: cover;
+  background-position: center center;
+}
+@media screen and (min-width: 800px) {
+  .w10 {
+    width: 2.6rem !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .w10 {
+    width: 3rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .w10 {
+    width: 2.4rem !important;
+  }
+}
+
+.tab-list {
+  border-bottom: none;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+  border-bottom: solid thin #f5f5f5
+}
+
+.tab-list-active {
+  background-color: white;
+  border-bottom: solid 2px #d61f69;
+}
+
+.left-7{
+  left: 7px;
+}

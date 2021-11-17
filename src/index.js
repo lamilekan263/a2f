@@ -1,13 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from 'react-router-dom'
+
 import './index.css';
 import App from './App';
+import { SidebarProvider } from "./context/SidebarContext";
+import ThemedSuspense from "./components/ThemedSuspense";
 import reportWebVitals from './reportWebVitals';
 
+
+
+
+
+import { Windmill } from "@windmill/react-ui";
+
+// import { BaseProvider } from "baseui";
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+    // <StyletronProvider value={engine}>
+    <BrowserRouter>
+      <SidebarProvider>
+        <Suspense fallback={<ThemedSuspense />}>
+          <Windmill usePreferences light >
+            <App />
+          </Windmill>
+        </Suspense>
+      </SidebarProvider>
+      </BrowserRouter>
+    // </StyletronProvider>,
+    ,
   document.getElementById('root')
 );
 
