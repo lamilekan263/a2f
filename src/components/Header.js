@@ -1,20 +1,16 @@
 import React, { useContext, useState } from "react";
 import { SidebarContext } from "../context/SidebarContext";
 import {
-  SearchIcon,
-  MoonIcon,
-  SunIcon,
+ 
   BellIcon,
   MenuIcon,
-  OutlinePersonIcon,
-  OutlineCogIcon,
-  OutlineLogoutIcon,
+ 
 } from "../icons";
 import {
 
   Dropdown,
   DropdownItem,
-  WindmillContext,
+  // WindmillContext,
 } from "@windmill/react-ui";
 // import { useHistory } from "react-router-dom";
 // import { useAuth } from "../context/auth";
@@ -23,11 +19,11 @@ import {
 
 function Header() {
   //const { authTokens, setAuthTokens } = useAuth();
-  const { mode, toggleMode } = useContext(WindmillContext);
+  // const { mode, toggleMode } = useContext(WindmillContext);
   const { toggleSidebar } = useContext(SidebarContext);
 
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
-  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  // const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   // const history = useHistory();
 
   // const { admin } = useSelector((state) => state.auth);
@@ -37,9 +33,9 @@ function Header() {
     setIsNotificationsMenuOpen(!isNotificationsMenuOpen);
   }
 
-  function handleProfileClick() {
-    setIsProfileMenuOpen(!isProfileMenuOpen);
-  }
+  // function handleProfileClick() {
+  //   setIsProfileMenuOpen(!isProfileMenuOpen);
+  // }
   // const logOut = async () => {
   //   dispatch(logout())
   //     .unwrap()

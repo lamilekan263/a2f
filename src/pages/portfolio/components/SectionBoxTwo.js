@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardBody, Badge, Button } from "@windmill/react-ui";
+import { Card,  Button } from "@windmill/react-ui";
 
 const SectionBoxTwo = ({title, buttonTitle,text}) => {
   return (

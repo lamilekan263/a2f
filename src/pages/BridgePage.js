@@ -1,5 +1,5 @@
 import React from "react";
-import { Label, Input, Select, Button } from "@windmill/react-ui";
+import { Label,  Select, } from "@windmill/react-ui";
 
 const BridgePage = () => {
   return (

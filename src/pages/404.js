@@ -1,7 +1,7 @@
 import React from "react";
 //import { useHistory } from "react-router-dom";
 
-import { ForbiddenIcon } from "../icons";
+
 
 function Page404() {
   // const history = useHistory();

@@ -1,19 +1,19 @@
 import React from "react";
 import routes from "../../routes/sidebar";
 import { NavLink, Route } from "react-router-dom";
-import * as Icons from "../../icons";
+// import * as Icons from "../../icons";
 //import * as menuIcons from '../../icons/menuIcons'
-import SidebarSubmenu from "./SidebarSubmenu";
+// import SidebarSubmenu from "./SidebarSubmenu";
 //import { Button } from '@windmill/react-ui'
 //import { Send } from 'react-feather';
 //import { IoWalletOutline } from "react-icons/io5";
 import Logo from "../Logo";
 //import { useAuth } from "../../context/auth";
 
-function Icon({ icon, ...props }) {
-  const Icon = Icons[icon];
-  return <Icon {...props} />;
-}
+// function Icon({ icon, ...props }) {
+//   const Icon = Icons[icon];
+//   return <Icon {...props} />;
+// }
 
 function SidebarContent() {
   //const { authTokens } = useAuth();
