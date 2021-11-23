@@ -13,7 +13,7 @@ function Header() {
     setIsNotificationsMenuOpen(!isNotificationsMenuOpen);
   }
 
- 
+ console.log(toggleSidebar)
 
   return (
     <header className="z-40 py-4 bg-primary  dark:bg-gray-800">

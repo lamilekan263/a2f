@@ -15,8 +15,9 @@ function Layout() {
   let location = useLocation();
 
   useEffect(() => {
-    closeSidebar();
-  }, [closeSidebar,location]);
+    // eslint-disable-next-line
+    closeSidebar();  // eslint-disable-line no-use-before-define
+  }, [location]);
 
   return (
     <div
@@ -24,7 +25,7 @@ function Layout() {
         isSidebarOpen && "overflow-hidden"
       }`}
     >
-      <Sidebar />
+      <Sidebar className="fixed"/>
 
       <div className="flex flex-col flex-1 w-full">
         <Header />
