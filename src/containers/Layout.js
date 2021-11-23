@@ -15,9 +15,8 @@ function Layout() {
   let location = useLocation();
 
   useEffect(() => {
-    
-    closeSidebar(); 
-  }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
+    closeSidebar();
+  }, [location]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
@@ -25,7 +24,7 @@ function Layout() {
         isSidebarOpen && "overflow-hidden"
       }`}
     >
-      <Sidebar className="fixed"/>
+      <Sidebar />
 
       <div className="flex flex-col flex-1 w-full">
         <Header />
