@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
 
 // create context
 export const SidebarContext = React.createContext()
@@ -14,14 +14,20 @@ export const SidebarProvider = ({ children }) => {
     setIsSidebarOpen(false)
   }
 
-  const value = useMemo(
-    () => ({
-      isSidebarOpen,
+  // const value = useMemo(
+  //   () => ({
+  //     isSidebarOpen,
+  //     toggleSidebar,
+  //     closeSidebar,
+  //   }),
+  //   [isSidebarOpen,toggleSidebar]
+  // )
+
+  const value = {
+    isSidebarOpen,
       toggleSidebar,
       closeSidebar,
-    }),
-    [isSidebarOpen,toggleSidebar]
-  )
+  }
 
   return <SidebarContext.Provider value={value}>{children}</SidebarContext.Provider>
 }
