@@ -15,9 +15,9 @@ function Layout() {
   let location = useLocation();
 
   useEffect(() => {
-    // eslint-disable-next-line
-    closeSidebar();  // eslint-disable-line no-use-before-define
-  }, [location]);
+    
+    closeSidebar(); 
+  }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
