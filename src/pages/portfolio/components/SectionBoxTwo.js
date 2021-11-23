@@ -3,7 +3,7 @@ import { Card,  Button } from "@windmill/react-ui";
 
 const SectionBoxTwo = ({title, buttonTitle,text}) => {
   return (
-    <Card className="my-4 p-10">
+    <Card className="my-4 p-10 shadow-lg">
       <h2 className="font-semibold text-lg">{ title }</h2>
 
       <div className="flex flex-col items-center justify-center">

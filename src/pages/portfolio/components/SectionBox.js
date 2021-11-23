@@ -3,7 +3,7 @@ import {Card, CardBody, Badge } from '@windmill/react-ui'
 
 const SectionBox = ({ title,bagdeContent}) => {
   return (
-      <Card className="w full flex-1">
+      <Card className="w full flex-1 shadow-lg">
     <div className="m-4">
         <CardBody>
       <p className="font-thin text-gray-500">{title}</p>
