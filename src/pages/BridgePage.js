@@ -1,9 +1,12 @@
 import React from "react";
+import { useMoralis } from "react-moralis";
 import { Button, Input, Label, Select } from "@windmill/react-ui";
 import WalletIcon from "../components/icons/WalletIcon";
 import SEO from "../components/Seo";
 
 const BridgePage = () => {
+  const { authenticate, isAuthenticated } =
+  useMoralis();
   return (
     <>
     <SEO title="Bridge"/>
@@ -75,12 +78,13 @@ const BridgePage = () => {
               </p>
             </div>
 
-            <Button
-              iconLeft={WalletIcon}
-              className="w-full mt-4 bg-primary mx-auto "
-            >
-              Connect Wallet
-            </Button>
+            {
+        isAuthenticated ? (
+          <Button className="w-full my-3 bg-primary hover:bg-blue-900">Pay</Button>
+        ) : (
+          <Button iconLeft={WalletIcon} className="w-full my-3 bg-primary hover:bg-blue-900" onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}>Connect Wallet</Button>
+        )
+      }
           </form>
         </div>
       </div>

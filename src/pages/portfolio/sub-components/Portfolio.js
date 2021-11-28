@@ -7,12 +7,12 @@ const Portfolio = () => {
         <div className="my-3">
             <div className="flex flex-col lg:flex-row gap-3">
             <SectionBox title="Total Balance" bagdeContent="Assets"/>
-            <SectionBox title="Savings" bagdeContent="savings" />
-            <SectionBox title="Liquidity Pool" bagdeContent="pools" />
+            {/* <SectionBox title="Savings" bagdeContent="savings" /> */}
+
             </div>
-            <SectionBoxTwo title="WALLET" buttonTitle="BUY ASSETS" text="You don't have any assets yet. Do you want to buy one?" />
-            <SectionBoxTwo title="SAVINGS" buttonTitle="MAKE A DEPOSIT" text="You don’t have any savings yet. Do you want to make one?" />
-            <SectionBoxTwo title="LIQUIDITY" buttonTitle="CREATE LIQUIDITY" text="You don’t have liquidity yet. Do you want to make one?" />
+            <SectionBoxTwo title="WALLET" buttonTitle="SEE ASSETS" text="You don't have any assets yet. Do you want to buy one?" />
+            <SectionBoxTwo title="SAVINGS" buttonTitle="Coming Soon" text="You don’t have any savings yet. Do you want to make one?" />
+            {/* <SectionBoxTwo title="LIQUIDITY" buttonTitle="CREATE LIQUIDITY" text="You don’t have liquidity yet. Do you want to make one?" /> */}
         </div>
     )
 }

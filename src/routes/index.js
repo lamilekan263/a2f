@@ -10,7 +10,6 @@ const Swap = lazy(() => import("../pages/swap/Swap"));
 const Portfolio = lazy(() => import("../pages/portfolio/Index"));
 
 const routes = [
-  
   {
     path: "/bridge-page",
     component: BridgePage,

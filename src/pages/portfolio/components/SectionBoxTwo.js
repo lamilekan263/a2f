@@ -11,7 +11,7 @@ const SectionBoxTwo = ({title, buttonTitle,text}) => {
           {text}
         </p>
 
-        <Button className="my-3 px-3 py-2 bg-primary">{ buttonTitle }</Button>
+        <Button  className="my-3 px-3 py-2 bg-primary">{ buttonTitle }</Button>
       </div>
     </Card>
   );

@@ -1,7 +1,12 @@
 import React from "react";
+import { useMoralis } from "react-moralis";
 import { Label, Input, Select, Button } from "@windmill/react-ui";
+import WalletIcon from "../../../components/icons/WalletIcon";
 
 const Limits = () => {
+
+  const { authenticate, isAuthenticated } =
+  useMoralis();
   return (
     <div className="w-full lg:w-3/5 mx-auto text-gray-500">
         <div>
@@ -54,7 +59,14 @@ const Limits = () => {
           <p className="text-xs">1 DAI cost~$10.0003514 ETH</p>
           <p className="text-xs">Transaction Cost~ $43.430.0152 Ξ</p>
       </div>
-      <Button className="w-full my-3 bg-primary hover:bg-blue-900">Connect Wallet</Button>
+      {
+        isAuthenticated ? (
+          <Button className="w-full my-3 bg-primary hover:bg-blue-900">Pay</Button>
+        ) : (
+          <Button iconLeft={WalletIcon} className="w-full my-3 bg-primary hover:bg-blue-900" onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}>Connect Wallet</Button>
+        )
+      }
+     
     </div>
   );
 };

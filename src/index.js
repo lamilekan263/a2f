@@ -7,7 +7,7 @@ import App from './App';
 import { SidebarProvider } from "./context/SidebarContext";
 import ThemedSuspense from "./components/ThemedSuspense";
 import reportWebVitals from './reportWebVitals';
-
+import { MoralisProvider } from "react-moralis";
 
 
 
@@ -15,6 +15,27 @@ import reportWebVitals from './reportWebVitals';
 import { Windmill } from "@windmill/react-ui";
 
 // import { BaseProvider } from "baseui";
+
+const APP_ID = "D3OAiWcOtZVf3qefJ3sJYrlfTB0TujpnSNfCAA3F";
+const SERVER_URL = "https://41akskx3gv3c.usemoralis.com:2053/server";
+
+
+const Application = () => {
+  const isServerInfo = APP_ID && SERVER_URL ? true : false;
+  if (isServerInfo)
+    return (
+      <MoralisProvider appId={APP_ID} serverUrl={SERVER_URL}>
+        <App isServerInfo />
+      </MoralisProvider>
+    );
+  else {
+    return (
+      <div style={{ display: "flex", justifyContent: "center" }}>
+     <h1>Hello world</h1>
+      </div>
+    );
+  }
+};
 
 
 ReactDOM.render(
@@ -24,7 +45,7 @@ ReactDOM.render(
       <SidebarProvider>
         <Suspense fallback={<ThemedSuspense />}>
           <Windmill usePreferences light >
-            <App />
+            <Application />
           </Windmill>
         </Suspense>
       </SidebarProvider>

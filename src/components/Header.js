@@ -1,7 +1,8 @@
-import { Button } from "@windmill/react-ui";
+
 import React, { useContext } from "react";
 import { SidebarContext } from "../context/SidebarContext";
-import WalletIcon from "./icons/WalletIcon";
+import Account from "./Account";
+
 
 function Header() {
   const { toggleSidebar } = useContext(SidebarContext);
@@ -37,24 +38,8 @@ function Header() {
 
         <div className="flex items-center justify-between gap-3">
           <h1 className="font-thin">A2ZFIN</h1>
-          <h1 className="font-thin">$1.456784</h1>
-          <Button iconLeft={WalletIcon} className="w-full mx-auto ">
-              Connect Wallet
-            </Button>
+          <Account />
         </div>
-
-        {/* <div className="flex justify-between items-center ">
-          <h1 className="font-thin">A2ZFIN</h1>
-          {/* <!--  toggler --> */}
-        {/* <li className="flex">$1.456784</li>
-
-          {/* <!-- Notifications menu --> */}
-        {/* <li>
-            <Button iconLeft={WalletIcon} className="w-full mx-auto ">
-              Connect Wallet
-            </Button>
-          </li> */}
-        {/* </div> */}
       </div>
     </header>
   );
