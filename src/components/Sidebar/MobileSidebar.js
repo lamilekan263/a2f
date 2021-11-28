@@ -7,7 +7,7 @@ import { SidebarContext } from "../../context/SidebarContext";
 
 function MobileSidebar() {
   const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
-console.log(isSidebarOpen)
+
   return (
     <Transition show={isSidebarOpen}>
       <>

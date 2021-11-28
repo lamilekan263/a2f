@@ -3,12 +3,9 @@ import React, { useContext } from "react";
 import { SidebarContext } from "../context/SidebarContext";
 import WalletIcon from "./icons/WalletIcon";
 
-
 function Header() {
-  
   const { toggleSidebar } = useContext(SidebarContext);
 
- 
   return (
     <header className="z-40 py-4 bg-primary  dark:bg-gray-800">
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-white dark:text-pink-300">
@@ -36,29 +33,28 @@ function Header() {
               </svg>
             </span>
           </button>
-          <h1 className="font-thin">A2ZFIN</h1>
         </div>
-        <div className="flex justify-center flex-1 lg:mr-32"></div>
 
-        <ul className="flex items-center justify-end flex-shrink-0 space-x-6">
-          {/* <!--  toggler --> */}
-          <li className="flex">$1.4567849900</li>
-
-          {/* <!-- Notifications menu --> */}
-          <li className="relative">
-
-          <Button
-              iconLeft={WalletIcon}
-              className="w-full   mx-auto "
-            >
+        <div className="flex items-center justify-between gap-3">
+          <h1 className="font-thin">A2ZFIN</h1>
+          <h1 className="font-thin">$1.456784</h1>
+          <Button iconLeft={WalletIcon} className="w-full mx-auto ">
               Connect Wallet
             </Button>
+        </div>
 
-            
+        {/* <div className="flex justify-between items-center ">
+          <h1 className="font-thin">A2ZFIN</h1>
+          {/* <!--  toggler --> */}
+        {/* <li className="flex">$1.456784</li>
 
-         
-          </li>
-        </ul>
+          {/* <!-- Notifications menu --> */}
+        {/* <li>
+            <Button iconLeft={WalletIcon} className="w-full mx-auto ">
+              Connect Wallet
+            </Button>
+          </li> */}
+        {/* </div> */}
       </div>
     </header>
   );
