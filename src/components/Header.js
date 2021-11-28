@@ -1,5 +1,5 @@
 import { Button } from "@windmill/react-ui";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { SidebarContext } from "../context/SidebarContext";
 import WalletIcon from "./icons/WalletIcon";
 
@@ -8,15 +8,7 @@ function Header() {
   
   const { toggleSidebar } = useContext(SidebarContext);
 
-  const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
  
-
-  function handleNotificationsClick() {
-    setIsNotificationsMenuOpen(!isNotificationsMenuOpen);
-  }
-
- console.log(toggleSidebar)
-
   return (
     <header className="z-40 py-4 bg-primary  dark:bg-gray-800">
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-white dark:text-pink-300">

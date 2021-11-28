@@ -2,6 +2,7 @@ import React from 'react'
 import { Tab } from "@headlessui/react"
 import Portfolio from './sub-components/Portfolio'
 import History from './sub-components/History'
+import SEO from '../../components/Seo'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -9,6 +10,8 @@ function classNames(...classes) {
 
 const Swap = () => {
     return (
+      <>
+      <SEO title="Port-Folio"/>
         <div className="w-full  px-2 py-16 sm:px-0">
      <Tab.Group>
       <Tab.List className="flex p-1 space-x-1 bg-blue-900/20 rounded-xl">
@@ -39,6 +42,7 @@ const Swap = () => {
       </Tab.Panels>
     </Tab.Group>
         </div>
+        </>
     )
 }
 

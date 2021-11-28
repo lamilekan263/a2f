@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../components/Seo";
 //import { useHistory } from "react-router-dom";
 
 
@@ -9,6 +10,8 @@ function Page404() {
   //   history.goBack();
   // };
   return (
+    <>
+    <SEO title="404"/>
     <div className="flex flex-col items-center">
       {/* <ForbiddenIcon
         className="w-12 h-12 mt-8 text-pink-200"
@@ -29,6 +32,7 @@ function Page404() {
         .
       </p>
     </div>
+    </>
   );
 }
 

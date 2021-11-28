@@ -1,9 +1,12 @@
 import React from "react";
 import { Button, Input, Label, Select } from "@windmill/react-ui";
 import WalletIcon from "../components/icons/WalletIcon";
+import SEO from "../components/Seo";
 
 const BridgePage = () => {
   return (
+    <>
+    <SEO title="Bridge"/>
     <div className="h-screen flex flex-col items-center  justify-center">
       <div>
         <h1>
@@ -39,8 +42,8 @@ const BridgePage = () => {
               <Label className="mt-3 flex-1">
                 <span className="mb-2 text-gray-500 font-bold">To Chain</span>
                 <Select className="mt-1 py-3 px-3">
-                  <option>BNB</option>
                   <option>ETH</option>
+                  <option>BNB</option>
                   <option>BTC</option>
                 </Select>
               </Label>
@@ -82,6 +85,7 @@ const BridgePage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
