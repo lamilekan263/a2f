@@ -26,16 +26,16 @@ const Account = () => {
   if (!isAuthenticated) {
     return (
       <Button onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}>
-        <p>Authenticate</p>
+        Connect
       </Button>
     );
   }
   return (
     <>
-      <div onClick={() => setIsModalOpen(true)}>
+      <Button className="shadow-lg bg-red-800"onClick={() => setIsModalOpen(true)}>
         <p style={{ marginRight: "5px" }}>{getEllipsisTxt(account, 6)}</p>
         <Blockie currentWallet scale={3} />
-      </div>
+      </Button>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalHeader>Log Out</ModalHeader>
