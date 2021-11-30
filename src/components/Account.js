@@ -28,7 +28,7 @@ const Account = () => {
       // <Button onClick={() =>setIsModalOpen(true) authenticate({ signingMessage: "Welcome to A2ZFin!" })}>
       //   Connect
       // </Button>
-       <Button onClick={() =>setIsModalOpen(true) }>
+       <Button onClick={() =>alert("connect") }>
        Connect
      </Button>
     );
