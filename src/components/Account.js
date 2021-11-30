@@ -18,16 +18,19 @@ import Address from "./Address";
 
 const Account = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { authenticate, isAuthenticated, logout, account, chainId } =
+  const {  isAuthenticated, logout, account, chainId } =
     useMoralis();
 
   const closeModal = () => setIsModalOpen(false);
 
   if (!isAuthenticated) {
     return (
-      <Button onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}>
-        Connect
-      </Button>
+      // <Button onClick={() =>setIsModalOpen(true) authenticate({ signingMessage: "Welcome to A2ZFin!" })}>
+      //   Connect
+      // </Button>
+       <Button onClick={() =>setIsModalOpen(true) }>
+       Connect
+     </Button>
     );
   }
   return (
