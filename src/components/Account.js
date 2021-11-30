@@ -29,13 +29,20 @@ const Account = () => {
   }
   return (
     <>
-      <button
+      <Button
         className="shadow-lg bg-red-800"
         onClick={() => setIsModalOpen(true)}
       >
         <p style={{ marginRight: "5px" }}>{getEllipsisTxt(account, 6)}</p>
         <Blockie currentWallet scale={3} />
-      </button>
+      </Button>
+
+      <Button
+        className="shadow-lg bg-red-800"
+        onClick={() => logout()}
+      >
+        Log Out
+      </Button>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalHeader>Log Out</ModalHeader>
@@ -51,7 +58,7 @@ const Account = () => {
             target="_blank"
             rel="noreferrer"
           >
-            {/* <SelectOutlined style={{ marginRight: "5px" }} /> */}
+           
             View on Explorer
           </a>
         </ModalBody>
