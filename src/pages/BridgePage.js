@@ -1,6 +1,8 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
-import { Button, Input, Label, Select } from "@windmill/react-ui";
+import { Button, Label, Select,Input } from "@windmill/react-ui";
+
+// import { Input } from "baseui/input";
 import WalletIcon from "../components/icons/WalletIcon";
 import SEO from "../components/Seo";
 
@@ -54,7 +56,7 @@ const BridgePage = () => {
             <div>
             <Label>
   <span>Token to Bridge</span>
-  <Input type="number" dir="rtl" className="mt-1 py-3 px-3" />
+  <Input type="number" dir="rtl" className="mt-3 bg-white  py-3 px-3" />
 </Label>
             </div>
             <div className="my-3">
