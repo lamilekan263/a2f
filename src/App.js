@@ -26,7 +26,7 @@ function App() {
         <Redirect to="/login" />
       </UserProvider>
 
-      <Route path="*" component={Page404} />
+      {/* <Route path="*" component={Page404} /> */}
     </Switch>
   );
 }
