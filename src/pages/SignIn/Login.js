@@ -6,24 +6,47 @@ import Logo from "../../assets/img/logo.jpg";
 import { UserContext } from "../../context/UserContext";
 
 const Login = () => {
-  const [isLoading, setIsloading] = useState(false);
+  const [isMetamaskLoading, setIsMetamaskLoading] = useState(false);
 
-  const { authenticate } = useMoralis();
+  const [isWalletLoading, setIsWalletLoading] = useState(false);
+
+  const { isAuthenticated,authenticate } = useMoralis();
 
   const { setUserAuth } = useContext(UserContext);
 
   const history = useHistory();
-  const authenticateUserWallet = async () => {
-    setIsloading(true);
+
+  const authenticateUserMetamask = async () => {
+    setIsMetamaskLoading(true);
     
    await authenticate({
       signingMessage: "Welcome to A2ZFin!",
     });
 
     setUserAuth(true);
-    history.push("/app/portfolio");
+    if(isAuthenticated){
+        history.push("/app/portfolio");
+        setIsMetamaskLoading(false);
+    }
+    
    
-    setIsloading(false);
+    setIsMetamaskLoading(false);
+  };
+  const authenticateUserWallet = async () => {
+    setIsWalletLoading(true);
+    
+   await authenticate({
+    provider: "walletconnect",
+      signingMessage: "Welcome to A2ZFin!",
+    });
+
+    setUserAuth(true);
+    if(isAuthenticated){
+        history.push("/app/portfolio");
+        setIsWalletLoading(false);
+    }
+   
+    setIsWalletLoading(false);
   };
   return (
     <>
@@ -40,20 +63,23 @@ const Login = () => {
           </div>
 
           <div>
+              <div className="sm:hidden lg:block">
             <button
+            onClick={authenticateUserMetamask}
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="group relative w-full flex  justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-              Connect Metamask
+              {isMetamaskLoading ? "Loading..." : "Connect Metamask"}
             </button>
+            </div>
             <button
               onClick={authenticateUserWallet}
               type="submit"
               className="mt-2  group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-              {isLoading ? "Loading..." : "Connect Wallet"}
+              {isWalletLoading ? "Loading..." : "Connect Wallet"}
             </button>
           </div>
         </div>
