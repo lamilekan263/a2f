@@ -12,44 +12,35 @@ import {
 import Blockie from "./Blockie";
 import { getEllipsisTxt } from "../helpers/formatters";
 import Address from "./Address";
+import { useHistory } from "react-router";
 
 const Account = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { isAuthenticated,authenticate, logout, account, chainId } = useMoralis();
+  const {  logout, chainId, user } = useMoralis();
 
   const closeModal = () => setIsModalOpen(false);
 
-  const [ user, setUser ] = useState(null);
-
-  const authenticateUser = async () => {
-    const response = await authenticate({provider:"walletconnect", signingMessage: "Welcome to A2ZFin!" });
-
-    console.log(response)
-    setUser(response)
+  // const [ user, setUser ] = useState(null);
+  const history = useHistory();
+  const logoutHandler = () =>{
+    logout()
+    history.push("/login")
   }
-  console.log(user)
-
-  if (!isAuthenticated) {
-    return (
-      <Button onClick={authenticateUser}>
-        Connect
-      </Button>
-     
-    );
-  }
+ 
+  
   return (
     <>
       <Button
         className="shadow-lg bg-red-800"
         onClick={() => setIsModalOpen(true)}
       >
-        <p style={{ marginRight: "5px" }}>{getEllipsisTxt(account, 6)}</p>
+        <p style={{ marginRight: "5px" }}>{getEllipsisTxt(user?.attributes.ethAddress, 6)}</p>
         <Blockie currentWallet scale={3} />
       </Button>
 
       <Button
         className="shadow-lg bg-red-800"
-        onClick={() => logout()}
+        onClick={logoutHandler}
       >
         Log Out
       </Button>
@@ -64,7 +55,7 @@ const Account = () => {
             style={{ fontSize: "20px" }}
           />
           <a
-            href={`${getExplorer(chainId)}/address/${account}`}
+            href={`${getExplorer(chainId)}/address/${user?.attributes.ethAddress}`}
             target="_blank"
             rel="noreferrer"
           >

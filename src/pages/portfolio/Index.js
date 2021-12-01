@@ -1,14 +1,42 @@
 import React from 'react'
+import moralis from "moralis"
 import { Tab } from "@headlessui/react"
 import Portfolio from './sub-components/Portfolio'
 import History from './sub-components/History'
 import SEO from '../../components/Seo'
+import ThemedSuspense from '../../components/ThemedSuspense'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
 
 const Swap = () => {
+
+  const [ allErcBalance, setGetAllErcBalance] = React.useState(null)
+
+  const [ isLoading, setIsLoading ] = React.useState(false)
+
+  const getAllErcz20 = async () => {
+    setIsLoading(true)
+    const response = await  moralis.Web3.getAllERC20();
+   
+
+    if(response){
+      setIsLoading(false);
+      setGetAllErcBalance(response)
+    }
+    
+  }
+
+  React.useEffect(() =>{
+    getAllErcz20()
+  },[])
+
+  if(isLoading) {
+    return(
+      <ThemedSuspense/>
+    )
+  }
     return (
       <>
       <SEO title="Port-Folio"/>
@@ -36,7 +64,7 @@ const Swap = () => {
     
       </Tab.List>
       <Tab.Panels>
-        <Tab.Panel><Portfolio /></Tab.Panel>
+        <Tab.Panel><Portfolio  allErcBalance={allErcBalance}/></Tab.Panel>
         <Tab.Panel><History/></Tab.Panel>
        
       </Tab.Panels>

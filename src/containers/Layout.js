@@ -44,8 +44,8 @@ function Layout() {
                   />
                 ) : null;
               })}
-              <Redirect exact from="/app" to="/app/p2p" />
-              <Route element={Page404} />
+              <Redirect exact from="/app" to="/app/portfolio" />
+              <Route component={Page404} />
             </Switch>
           </Suspense>
         </Main>

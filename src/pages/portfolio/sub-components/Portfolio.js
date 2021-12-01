@@ -2,11 +2,11 @@ import React from 'react'
 import SectionBox from '../components/SectionBox'
 import SectionBoxTwo from '../components/SectionBoxTwo'
 
-const Portfolio = () => {
+const Portfolio = ({allErcBalance}) => {
     return (
         <div className="my-3">
             <div className="flex flex-col lg:flex-row gap-3">
-            <SectionBox title="Total Balance" bagdeContent="Assets"/>
+            <SectionBox title="Total Balance" bagdeContent="Assets" totalErc20={allErcBalance}/>
             {/* <SectionBox title="Savings" bagdeContent="savings" /> */}
 
             </div>
