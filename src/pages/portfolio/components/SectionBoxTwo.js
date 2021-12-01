@@ -1,7 +1,8 @@
 import React from "react";
-import { Card,  Button } from "@windmill/react-ui";
+import { Card } from "@windmill/react-ui";
+import { Link } from "react-router-dom";
 
-const SectionBoxTwo = ({title, buttonTitle,text}) => {
+const SectionBoxTwo = ({title, buttonTitle,text,linkAddress}) => {
   return (
     <Card className="my-4 p-10 shadow-lg">
       <h2 className="font-semibold text-lg">{ title }</h2>
@@ -11,7 +12,7 @@ const SectionBoxTwo = ({title, buttonTitle,text}) => {
           {text}
         </p>
 
-        <Button  className="my-3 px-3 py-2 bg-primary">{ buttonTitle }</Button>
+        <Link  to={linkAddress} className="my-3 px-3 py-2 bg-primary text-white">{ buttonTitle }</Link>
       </div>
     </Card>
   );

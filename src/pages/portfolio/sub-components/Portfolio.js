@@ -3,6 +3,8 @@ import SectionBox from '../components/SectionBox'
 import SectionBoxTwo from '../components/SectionBoxTwo'
 
 const Portfolio = ({allErcBalance}) => {
+
+    console.log(allErcBalance)
     return (
         <div className="my-3">
             <div className="flex flex-col lg:flex-row gap-3">
@@ -10,7 +12,7 @@ const Portfolio = ({allErcBalance}) => {
             {/* <SectionBox title="Savings" bagdeContent="savings" /> */}
 
             </div>
-            <SectionBoxTwo title="WALLET" buttonTitle="SEE ASSETS" text="You don't have any assets yet. Do you want to buy one?" />
+            <SectionBoxTwo title="WALLET" linkAddress="/app/portfolio/assets" buttonTitle="SEE ASSETS" text="You don't have any assets yet. Do you want to buy one?" />
             <SectionBoxTwo title="SAVINGS" buttonTitle="Coming Soon" text="You don’t have any savings yet. Do you want to make one?" />
             {/* <SectionBoxTwo title="LIQUIDITY" buttonTitle="CREATE LIQUIDITY" text="You don’t have liquidity yet. Do you want to make one?" /> */}
         </div>

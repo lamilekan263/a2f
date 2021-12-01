@@ -8,6 +8,8 @@ const Blank = lazy(() => import("../pages/Blank"));
 const Swap = lazy(() => import("../pages/swap/Swap"));
 const Portfolio = lazy(() => import("../pages/portfolio/Index"));
 
+const AssetsPage = lazy(() => import("../pages/portfolio/subpages/AssetsPage"))
+
 
 const routes = [
   {
@@ -22,6 +24,11 @@ const routes = [
     path: "/portfolio",
     component: Portfolio,
   },
+  {
+    path: "/portfolio/assets",
+    component: AssetsPage,
+  },
+  
 
   {
     path: "*",

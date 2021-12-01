@@ -10,7 +10,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
   }
 
-const Swap = () => {
+const Index = () => {
 
   const [ allErcBalance, setGetAllErcBalance] = React.useState(null)
 
@@ -74,4 +74,4 @@ const Swap = () => {
     )
 }
 
-export default Swap
+export default Index

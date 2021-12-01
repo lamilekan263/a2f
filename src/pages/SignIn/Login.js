@@ -3,6 +3,7 @@ import { useMoralis } from "react-moralis";
 import { useHistory } from "react-router";
 
 import Logo from "../../assets/img/logo.jpg";
+import SEO from "../../components/Seo";
 import { UserContext } from "../../context/UserContext";
 
 const Login = () => {
@@ -10,46 +11,49 @@ const Login = () => {
 
   const [isWalletLoading, setIsWalletLoading] = useState(false);
 
-  const { isAuthenticated,authenticate } = useMoralis();
+  const { isAuthenticated, authenticate } = useMoralis();
 
   const { setUserAuth } = useContext(UserContext);
 
   const history = useHistory();
 
+
+    // authenticate metamask
   const authenticateUserMetamask = async () => {
     setIsMetamaskLoading(true);
-    
-   await authenticate({
+
+    await authenticate({
       signingMessage: "Welcome to A2ZFin!",
     });
 
     setUserAuth(true);
-    if(isAuthenticated){
-        history.push("/app/portfolio");
-        setIsMetamaskLoading(false);
+    if (isAuthenticated) {
+      history.push("/app/portfolio");
+      setIsMetamaskLoading(false);
     }
-    
-   
+
     setIsMetamaskLoading(false);
   };
+
+//   authenticate wallet
   const authenticateUserWallet = async () => {
     setIsWalletLoading(true);
-    
-   await authenticate({
-    provider: "walletconnect",
+
+    await authenticate({
+      provider: "walletconnect",
       signingMessage: "Welcome to A2ZFin!",
     });
 
     setUserAuth(true);
-    if(isAuthenticated){
-        history.push("/app/portfolio");
-        setIsWalletLoading(false);
+    if (isAuthenticated) {
+      history.push("/app/portfolio");
+      setIsWalletLoading(false);
     }
-   
     setIsWalletLoading(false);
   };
   return (
     <>
+      <SEO title="Login" />
       <div className="bg-primary h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
@@ -63,15 +67,15 @@ const Login = () => {
           </div>
 
           <div>
-              <div className="sm:hidden lg:block">
-            <button
-            onClick={authenticateUserMetamask}
-              type="submit"
-              className="group relative w-full flex  justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
-              {isMetamaskLoading ? "Loading..." : "Connect Metamask"}
-            </button>
+            <div className="sm:hidden lg:block">
+              <button
+                onClick={authenticateUserMetamask}
+                type="submit"
+                className="group relative w-full flex  justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
+                {isMetamaskLoading ? "Loading..." : "Connect Metamask"}
+              </button>
             </div>
             <button
               onClick={authenticateUserWallet}

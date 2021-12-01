@@ -3,7 +3,7 @@ import React from "react";
 
 function ThemedSuspense() {
   return (
-    <div className="w-full mx-auto h-screen p-6 text-lg font-medium text-primary dark:text-primary dark:bg-gray-900">
+    <div className="flex items-center justify-center mx-auto h-screen p-6 text-lg font-medium text-primary dark:text-primary dark:bg-gray-900">
       
       Loading...
     </div>

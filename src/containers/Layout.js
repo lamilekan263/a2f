@@ -32,6 +32,7 @@ function Layout() {
        
         <Main >
         <Sidebar />
+        
           <Suspense fallback={<ThemedSuspense />}>
             <Switch>
               {routes.map((route, i) => {
@@ -48,6 +49,7 @@ function Layout() {
               <Route component={Page404} />
             </Switch>
           </Suspense>
+  
         </Main>
       </div>
     </div>
