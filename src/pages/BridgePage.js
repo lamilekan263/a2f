@@ -12,7 +12,7 @@ const BridgePage = () => {
   return (
     <>
     <SEO title="Bridge"/>
-    <div className="h-screen flex flex-col items-center  justify-center">
+    <div className="w-full p-3 h-screen flex flex-col items-center  justify-center">
       <div>
         <h1>
           {" "}

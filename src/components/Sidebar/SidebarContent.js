@@ -6,7 +6,7 @@ import Logo from "../Logo";
 
 function SidebarContent() {
   return (
-    <div className="text-gray-500 dark:text-gray-400 pt-5">
+    <div className="  text-gray-500 dark:text-gray-400 pt-5">
       <a className="" href="/app/overview">
         <Logo />
       </a>

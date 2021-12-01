@@ -16,7 +16,7 @@ function Layout() {
 
   useEffect(() => {
     closeSidebar();
-  }, [location]);// eslint-disable-line react-hooks/exhaustive-deps
+  }, [location]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
@@ -24,11 +24,14 @@ function Layout() {
         isSidebarOpen && "overflow-hidden"
       }`}
     >
-      <Sidebar />
-
-      <div className="flex flex-col flex-1 w-full">
+      {/*  */}
+   
+      
+      <div className="flex flex-col flex-1  w-full">
         <Header />
-        <Main>
+       
+        <Main >
+        <Sidebar />
           <Suspense fallback={<ThemedSuspense />}>
             <Switch>
               {routes.map((route, i) => {

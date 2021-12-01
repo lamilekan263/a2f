@@ -4,8 +4,8 @@ import SidebarContent from "./SidebarContent";
 
 function DesktopSidebar(props) {
   return (
-    <aside className="z-30 flex-shrink-0 hidden w-64 overflow-y-auto bg-primary dark:bg-gray-800 lg:block">
-      <SidebarContent />
+    <aside className="h-screen  z-30 flex-shrink-0 hidden w-64 overflow-y-auto bg-primary dark:bg-gray-800 lg:block">
+    <SidebarContent />
     </aside>
   );
 }

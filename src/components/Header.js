@@ -8,7 +8,7 @@ function Header() {
   const { toggleSidebar } = useContext(SidebarContext);
 
   return (
-    <header className="z-40 py-4 bg-primary  dark:bg-gray-800">
+    <header className="sticky w-full relative top-0 z-40 py-4 bg-primary  dark:bg-gray-800">
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-white dark:text-pink-300">
         {/* <!-- Mobile hamburger --> */}
         <div className="flex items-center gap-2">

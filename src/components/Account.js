@@ -19,9 +19,19 @@ const Account = () => {
 
   const closeModal = () => setIsModalOpen(false);
 
+  const [ user, setUser ] = useState(null);
+
+  const authenticateUser = async () => {
+    const response = await authenticate({provider:"walletconnect", signingMessage: "Welcome to A2ZFin!" });
+
+    console.log(response)
+    setUser(response)
+  }
+  console.log(user)
+
   if (!isAuthenticated) {
     return (
-      <Button onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}>
+      <Button onClick={authenticateUser}>
         Connect
       </Button>
      
