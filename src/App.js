@@ -5,7 +5,7 @@ import PrivateRoute from "./PrivateRoute";
 import Login from "./pages/SignIn/Login";
 import { UserProvider } from "./context/UserContext";
 const Layout = lazy(() => import("./containers/Layout"));
-const Page404 = lazy(() => import("./pages/404"));
+// const Page404 = lazy(() => import("./pages/404"));
 
 function App() {
   const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
