@@ -1,4 +1,5 @@
 import React from 'react'
+import { useMoralis } from "react-moralis"
 import moralis from "moralis"
 import { Tab } from "@headlessui/react"
 import Portfolio from './sub-components/Portfolio'
@@ -11,6 +12,9 @@ function classNames(...classes) {
   }
 
 const Index = () => {
+
+  const {  isAuthenticated } =
+  useMoralis();
 
   const [ allErcBalance, setGetAllErcBalance] = React.useState(null)
 
@@ -29,8 +33,8 @@ const Index = () => {
   }
 
   React.useEffect(() =>{
-    getAllErcz20()
-  },[])
+    if(isAuthenticated)getAllErcz20()
+  },[isAuthenticated])
 
   if(isLoading) {
     return(

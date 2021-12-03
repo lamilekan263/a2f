@@ -37,7 +37,7 @@ function Header() {
         </div>
 
         <div className="flex items-center justify-between gap-3">
-          <h1 className="font-thin">A2ZFIN</h1>
+          <h1 className="sm:hidden md:visible font-thin">A2ZFIN</h1>
           <Account />
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, lazy } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route,Redirect } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import Login from "./pages/SignIn/Login";
 import { UserProvider } from "./context/UserContext";
@@ -19,8 +19,10 @@ function App() {
   return (
     <Switch>
       <UserProvider>
-        <Route path="/login" component={Login} />
-        <Layout />
+      <Redirect exact from="/" to="/app/portfolio" />
+          <Route path="/login" component={Login} />
+       
+        <Layout path="/app" />
       </UserProvider>
 
       <Route path="*" component={Page404} />

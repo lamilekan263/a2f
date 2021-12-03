@@ -12,38 +12,50 @@ import {
 import Blockie from "./Blockie";
 import { getEllipsisTxt } from "../helpers/formatters";
 import Address from "./Address";
-import { useHistory } from "react-router";
+import WalletIcon from "./icons/WalletIcon";
 
 const Account = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const {  logout, chainId, user } = useMoralis();
+  const { authenticate, isAuthenticated, logout, chainId, user } = useMoralis();
 
   const closeModal = () => setIsModalOpen(false);
 
-  // const [ user, setUser ] = useState(null);
-  const history = useHistory();
-  const logoutHandler = () =>{
-    logout()
-    history.push("/login")
-  }
- 
-  
+  const logoutHandler = () => {
+    logout();
+  };
+
   return (
     <>
-      <Button
-        className="shadow-lg bg-red-800"
-        onClick={() => setIsModalOpen(true)}
-      >
-        <p style={{ marginRight: "5px" }}>{getEllipsisTxt(user?.attributes.ethAddress, 6)}</p>
-        <Blockie currentWallet scale={3} />
-      </Button>
+      {!isAuthenticated && (
+        <Button
+          iconLeft={WalletIcon}
+          className="w-full my-3 bg-white text-primary shadow-md hover:bg-blue-900"
+          onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}
+        >
+          Connect Wallet
+        </Button>
+      )}
 
-      <Button
-        className="shadow-lg bg-red-800"
-        onClick={logoutHandler}
-      >
-        Log Out
-      </Button>
+      {isAuthenticated && (
+        <div className="flex flex-row gap-2">
+          <Button
+            className="flex-1 shadow-lg bg-red-800"
+            onClick={() => setIsModalOpen(true)}
+          >
+            <p style={{ marginRight: "5px" }}>
+              {getEllipsisTxt(user?.attributes.ethAddress, 6)}
+            </p>
+            <Blockie currentWallet scale={3} />
+          </Button>
+
+          <Button
+            className="flex-1 shadow-lg bg-red-800"
+            onClick={logoutHandler}
+          >
+            Log Out
+          </Button>
+        </div>
+      )}
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <ModalHeader>Log Out</ModalHeader>
@@ -55,11 +67,12 @@ const Account = () => {
             style={{ fontSize: "20px" }}
           />
           <a
-            href={`${getExplorer(chainId)}/address/${user?.attributes.ethAddress}`}
+            href={`${getExplorer(chainId)}/address/${
+              user?.attributes.ethAddress
+            }`}
             target="_blank"
             rel="noreferrer"
           >
-           
             View on Explorer
           </a>
         </ModalBody>
