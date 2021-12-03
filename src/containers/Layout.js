@@ -25,14 +25,13 @@ function Layout() {
       }`}
     >
       {/*  */}
-   
-      
+
       <div className="flex flex-col flex-1  w-full">
         <Header />
-       
-        <Main >
-        <Sidebar />
-        
+
+        <Main>
+          <Sidebar />
+
           <Suspense fallback={<ThemedSuspense />}>
             <Switch>
               {routes.map((route, i) => {
@@ -49,7 +48,6 @@ function Layout() {
               <Route component={Page404} />
             </Switch>
           </Suspense>
-  
         </Main>
       </div>
     </div>

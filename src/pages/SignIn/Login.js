@@ -1,10 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { useHistory } from "react-router";
 
 import Logo from "../../assets/img/logo.jpg";
 import SEO from "../../components/Seo";
-import { UserContext } from "../../context/UserContext";
 
 const Login = () => {
   const [isMetamaskLoading, setIsMetamaskLoading] = useState(false);
@@ -13,12 +12,15 @@ const Login = () => {
 
   const { isAuthenticated, authenticate } = useMoralis();
 
-  const { setUserAuth } = useContext(UserContext);
-
   const history = useHistory();
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.goBack();
+    }
+  }, [isAuthenticated,history]);
 
-    // authenticate metamask
+  // authenticate metamask
   const authenticateUserMetamask = async () => {
     setIsMetamaskLoading(true);
 
@@ -26,16 +28,15 @@ const Login = () => {
       signingMessage: "Welcome to A2ZFin!",
     });
 
-    setUserAuth(true);
     if (isAuthenticated) {
-      history.push("/app/portfolio");
+      history.goBack();
       setIsMetamaskLoading(false);
     }
 
     setIsMetamaskLoading(false);
   };
 
-//   authenticate wallet
+  //   authenticate wallet
   const authenticateUserWallet = async () => {
     setIsWalletLoading(true);
 
@@ -44,9 +45,8 @@ const Login = () => {
       signingMessage: "Welcome to A2ZFin!",
     });
 
-    setUserAuth(true);
     if (isAuthenticated) {
-      history.push("/app/portfolio");
+      history.goBack();
       setIsWalletLoading(false);
     }
     setIsWalletLoading(false);

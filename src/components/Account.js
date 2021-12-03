@@ -13,10 +13,11 @@ import Blockie from "./Blockie";
 import { getEllipsisTxt } from "../helpers/formatters";
 import Address from "./Address";
 import WalletIcon from "./icons/WalletIcon";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { authenticate, isAuthenticated, logout, chainId, user } = useMoralis();
+  const {  isAuthenticated, logout, chainId, user } = useMoralis();
 
   const closeModal = () => setIsModalOpen(false);
 
@@ -27,13 +28,14 @@ const Account = () => {
   return (
     <>
       {!isAuthenticated && (
-        <Button
-          iconLeft={WalletIcon}
-          className="w-full my-3 bg-white text-primary shadow-md hover:bg-blue-900"
-          onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}
+        <Link to="/login"
+        
+          
         >
+          <Button className="w-full my-3 bg-white text-primary shadow-md hover:bg-blue-900"   iconLeft={WalletIcon}>
           Connect Wallet
-        </Button>
+          </Button>
+        </Link>
       )}
 
       {isAuthenticated && (

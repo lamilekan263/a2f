@@ -11,7 +11,7 @@ function Header() {
     <header className="sticky w-full relative top-0 z-40 py-4 bg-primary  dark:bg-gray-800">
       <div className="container flex items-center justify-between h-full px-6 mx-auto text-white dark:text-pink-300">
         {/* <!-- Mobile hamburger --> */}
-        <div className="flex items-center gap-2">
+      
           <button
             className="p-1 mr-5 -ml-1 rounded-md lg:hidden focus:outline-none focus:shadow-outline-blue"
             onClick={toggleSidebar}
@@ -34,10 +34,11 @@ function Header() {
               </svg>
             </span>
           </button>
-        </div>
+
+        <h1 className="hidden  md:block font-bold">A2ZFIN</h1>
 
         <div className="flex items-center justify-between gap-3">
-          <h1 className="sm:hidden md:visible font-thin">A2ZFIN</h1>
+         
           <Account />
         </div>
       </div>

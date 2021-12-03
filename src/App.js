@@ -1,11 +1,11 @@
 import React, { useEffect, lazy } from "react";
-import { Switch, Route,Redirect } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { useMoralis } from "react-moralis";
 import Login from "./pages/SignIn/Login";
-import { UserProvider } from "./context/UserContext";
-import Page404 from "./pages/404";
+
+
 const Layout = lazy(() => import("./containers/Layout"));
-// const Page404 = lazy(() => import("./pages/404"));
+const Page404 = lazy(() => import("./pages/404"));
 
 function App() {
   const { isWeb3Enabled, enableWeb3, isAuthenticated, isWeb3EnableLoading } =
@@ -18,13 +18,9 @@ function App() {
 
   return (
     <Switch>
-      <UserProvider>
       <Redirect exact from="/" to="/app/portfolio" />
-          <Route path="/login" component={Login} />
-       
-        <Layout path="/app" />
-      </UserProvider>
-
+      <Route path="/login" component={Login} />
+      <Layout path="/app" />
       <Route path="*" component={Page404} />
     </Switch>
   );
