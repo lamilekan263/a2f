@@ -1,6 +1,6 @@
 import React from "react";
-import Moralis from "moralis";
-import { useMoralis, useMoralisWeb3Api } from "react-moralis";
+
+import { useMoralis } from "react-moralis";
 import { Button, Label, Select, Input } from "@windmill/react-ui";
 
 // import { Input } from "baseui/input";
@@ -9,24 +9,9 @@ import SEO from "../components/Seo";
 import { Link } from "react-router-dom";
 
 const BridgePage = () => {
-  const { isAuthenticated, user } = useMoralis();
+  const { isAuthenticated } = useMoralis();
 
 
-  const api= useMoralisWeb3Api()
-
-  
-
-  const getUserTransactions = async () => {
-    // create query
-
-    const data = await api.account.getTransactions({chain:"rinkeby"})
-
-    console.log("web3 is enabled :", await api.account.getTokenBalances({chain:"rinkeby"}));
-
-    console.log(Moralis.Units.FromWei(data.result[0].value))
-  };
-
-  getUserTransactions(user)
   return (
     <>
       <SEO title="Bridge" />
