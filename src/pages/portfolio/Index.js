@@ -23,7 +23,7 @@ const Index = () => {
   const getAllErc20 = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await account.getTokenBalances({ chain: "rinkeby" });
+      const response = await account.getTokenBalances();
 
       if (response) {
         setIsLoading(false);

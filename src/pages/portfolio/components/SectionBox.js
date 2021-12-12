@@ -1,5 +1,5 @@
 import React, { useEffect,useCallback } from "react";
-import {useMoralis} from "react-moralis"
+import {useMoralis, useMoralisWeb3Api } from "react-moralis"
 import { Card, Button, CardBody, Badge } from "@windmill/react-ui";
 
 const SectionBox = ({ title, bagdeContent, totalErc20 }) => {
@@ -10,18 +10,23 @@ const SectionBox = ({ title, bagdeContent, totalErc20 }) => {
     if(totalErc20 && isAuthenticated ){
       return totalErc20
     }
-  },[totalErc20,isAuthenticated])
+  }, [totalErc20, isAuthenticated])
   
 
+  const  account = useMoralisWeb3Api();
+  
+console.log(account)
   useEffect(() => {
     getBalance()
-  },[isAuthenticated,getBalance])
+  }, [isAuthenticated, getBalance])
+  
+  console.log(totalErc20);
   return (
     <Card className="w full flex-1 shadow-lg">
       <div className="m-4">
         <CardBody>
           <p className="font-thin text-gray-500">{title}</p>
-          <h5 className="my-3">${totalErc20 ? totalErc20[0].balance : "0"}</h5>
+          {/* <h5 className="my-3">${totalErc20 ? totalErc20[0].balance : "0"}</h5> */}
           <Badge type="neutral" className="px-3 py-2">
             {totalErc20 ? totalErc20.length : "0"} {bagdeContent}
           </Badge>

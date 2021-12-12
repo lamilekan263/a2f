@@ -16,7 +16,7 @@ const History = () => {
   const fetchUsersTransactions = useCallback(async () => {
       try {
         setIsLoading(true);
-        const result = await account.getTransactions({ chain: "rinkeby" });
+        const result = await account.getTransactions();
         setData(result);
         setIsLoading(false);
       } catch (error) {
@@ -43,7 +43,7 @@ const History = () => {
     }
   return (
       <div className="m-3 grid lg:grid-cols-3 gap-2">
-        {data && data.length === 0 ? <h1>You currently have no Transactions</h1> : null}
+        {data && data.result.length === 0 ? <h1>You currently have no Transactions</h1> : null}
           
       {data && data.result.map((tx) => <HistoryCard tx={tx} />)}
     </div>

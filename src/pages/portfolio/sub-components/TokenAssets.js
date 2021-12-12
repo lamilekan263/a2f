@@ -8,9 +8,7 @@ import AssetCard from "../components/AssetCard";
 
 const TokenAssets = () => {
   const { isAuthenticated } = useMoralis();
-  const { fetchERC20Balances, data, isLoading, error } = useERC20Balances({
-    chain: "rinkeby",
-  });
+  const { fetchERC20Balances, data, isLoading, error } = useERC20Balances();
 
   useEffect(() => {
     if (isAuthenticated) fetchERC20Balances();
@@ -18,6 +16,8 @@ const TokenAssets = () => {
   if (isLoading) {
     return <ThemedSuspense />;
   }
+
+  console.log(data)
 
   return (
     <div className="p-4">
