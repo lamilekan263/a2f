@@ -22,34 +22,49 @@ const Login = () => {
 
   // authenticate metamask
   const authenticateUserMetamask = async () => {
-    setIsMetamaskLoading(true);
 
-    await authenticate({
-      signingMessage: "Welcome to A2ZFin!",
-    });
+    try {
+       setIsMetamaskLoading(true);
 
-    if (isAuthenticated) {
-      history.goBack();
+       await authenticate({
+         signingMessage: "Welcome to A2ZFin!",
+       });
+
+       if (isAuthenticated) {
+         history.goBack();
+         setIsMetamaskLoading(false);
+       }
+    } catch (error) {
+      alert(error.message);
       setIsMetamaskLoading(false);
     }
+   
 
-    setIsMetamaskLoading(false);
+    
   };
 
   //   authenticate wallet
   const authenticateUserWallet = async () => {
-    setIsWalletLoading(true);
 
-    await authenticate({
-      provider: "walletconnect",
-      signingMessage: "Welcome to A2ZFin!",
-    });
+    try {
+      setIsWalletLoading(true);
 
-    if (isAuthenticated) {
-      history.goBack();
-      setIsWalletLoading(false);
+      await authenticate({
+        provider: "walletconnect",
+        signingMessage: "Welcome to A2ZFin!",
+      });
+
+      if (isAuthenticated) {
+        history.goBack();
+        setIsWalletLoading(false);
+      }
+      
+    } catch (error) {
+      alert(error.message)
+       setIsWalletLoading(false);
     }
-    setIsWalletLoading(false);
+    
+   
   };
   return (
     <>

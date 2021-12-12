@@ -3,9 +3,11 @@ import { useMoralis } from "react-moralis";
 import { Label, Input, Select, Button } from "@windmill/react-ui";
 import WalletIcon from "../../../components/icons/WalletIcon";
 
+import { Link } from "react-router-dom";
+
 const Market = () => {
-  const { authenticate, isAuthenticated } =
-  useMoralis();
+  const { isAuthenticated } = useMoralis();
+
   return (
     <div className="w-full lg:w-3/5 mx-auto text-gray-500">
       <div>
@@ -43,13 +45,20 @@ const Market = () => {
         <p className="text-xs">1 WETH cost0.2 DA</p>
         <p className="text-xs">1 DAI cost5 WETH</p>
       </div>
-      {
-        isAuthenticated ? (
-          <Button className="w-full my-3 bg-primary hover:bg-blue-900">Pay</Button>
-        ) : (
-          <Button iconLeft={WalletIcon} className="w-full my-3 bg-primary hover:bg-blue-900" onClick={() => authenticate({ signingMessage: "Welcome to A2ZFin!" })}>Connect Wallet</Button>
-        )
-      }
+      {isAuthenticated ? (
+        <Button className="w-full my-3 bg-primary hover:bg-blue-900">
+          Pay
+        </Button>
+      ) : (
+        <Link to="/login">
+          <Button
+            iconLeft={WalletIcon}
+            className="w-full my-3 bg-primary hover:bg-blue-900"
+          >
+            Connect Wallet
+          </Button>
+        </Link>
+      )}
     </div>
   );
 };

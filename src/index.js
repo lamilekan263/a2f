@@ -13,8 +13,8 @@ import { Windmill } from "@windmill/react-ui";
 
 // import { BaseProvider } from "baseui";
 
-const APP_ID = "D3OAiWcOtZVf3qefJ3sJYrlfTB0TujpnSNfCAA3F";
-const SERVER_URL = "https://41akskx3gv3c.usemoralis.com:2053/server";
+const APP_ID = "ZhBYTouGDPVru1uSqznsuQ2CN3WsBIjTCJX5KKWO";
+const SERVER_URL = "https://ogglzj6p7kxj.usemoralis.com:2053/server";
 
 const Application = () => {
   const isServerInfo = APP_ID && SERVER_URL ? true : false;
@@ -38,7 +38,7 @@ ReactDOM.render(
   <BrowserRouter>
     <SidebarProvider>
       <Suspense fallback={<ThemedSuspense />}>
-        <Windmill usePreferences light>
+        <Windmill usePreferences light >
           <Application />
         </Windmill>
       </Suspense>

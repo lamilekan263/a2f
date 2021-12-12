@@ -35,4 +35,8 @@ const SectionBox = ({ title, bagdeContent, totalErc20 }) => {
   );
 };
 
+SectionBox.defaultProps = {
+  totalErc20: 0
+}
+
 export default SectionBox;
