@@ -9,7 +9,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@walletconnect/web3-provider": "^1.6.6",
-    "@windmill/react-ui": "^0.6.0",
+    "@windmill/react-ui": "0.3.1",
     "date-fns": "^2.27.0",
     "moment": "^2.29.1",
     "moralis": "^0.0.135",
