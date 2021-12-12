@@ -15,9 +15,15 @@ const HistoryCard = ({ tx }) => {
     <Card>
       <CardBody>
         {tx.receipt_status === "0" ? (
-          <Badge className="my-2 bg-red-200 text-white text-xs"> Failed</Badge>
+          <Badge type="danger"
+       
+            className="my-2 bg-red-200 text-white text-xs"> Failed
+          </Badge>
         ) : (
-          <Badge className="my-2 bg-green-200 text-white text-xs">
+          <Badge
+            type="success"
+            className="my-2 bg-green-200 text-white text-xs"
+          >
             Success
           </Badge>
         )}

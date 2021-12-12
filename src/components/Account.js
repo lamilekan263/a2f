@@ -1,15 +1,14 @@
 import { useMoralis } from "react-moralis";
 import React, { useState } from "react";
-import { Button } from "baseui/button";
+
+import { getExplorer } from "../helpers/networks";
 import {
   Modal,
   ModalHeader,
   ModalBody,
   ModalFooter,
- 
-} from "baseui/modal";
-import { getExplorer } from "../helpers/networks";
-
+  Button,
+} from "@windmill/react-ui";
 import Blockie from "./Blockie";
 import { getEllipsisTxt } from "../helpers/formatters";
 import Address from "./Address";
