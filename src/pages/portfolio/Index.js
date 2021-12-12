@@ -30,7 +30,8 @@ const Index = () => {
         setGetAllErcBalance(response);
       }
     } catch (error) {
-      alert(error.message);
+      setIsLoading(false);
+      alert(error);
       
     }
     

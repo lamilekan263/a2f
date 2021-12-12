@@ -12,6 +12,7 @@ import { MoralisProvider } from "react-moralis";
 
 
 import { Windmill } from "@windmill/react-ui";
+import myTheme from "./myTheme";
 
 // import { BaseProvider } from "baseui";
 
@@ -40,7 +41,7 @@ ReactDOM.render(
   <BrowserRouter>
     <SidebarProvider>
       <Suspense fallback={<ThemedSuspense />}>
-        <Windmill usePreferences light >
+        <Windmill usePreferences light theme={myTheme} >
           <Application />
         </Windmill>
       </Suspense>
