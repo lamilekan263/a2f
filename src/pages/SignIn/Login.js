@@ -35,7 +35,7 @@ const Login = () => {
          setIsMetamaskLoading(false);
        }
     } catch (error) {
-      alert(error.message);
+     
       setIsMetamaskLoading(false);
     }
    
@@ -60,7 +60,7 @@ const Login = () => {
       }
       
     } catch (error) {
-      alert(error.message)
+     
        setIsWalletLoading(false);
     }
     

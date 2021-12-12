@@ -31,7 +31,7 @@ const Index = () => {
       }
     } catch (error) {
       setIsLoading(false);
-      alert(error);
+   
       
     }
     

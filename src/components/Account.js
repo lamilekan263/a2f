@@ -2,13 +2,7 @@ import { useMoralis } from "react-moralis";
 import React, {Fragment, useState } from "react";
 
 import { getExplorer } from "../helpers/networks";
-import {
-  // Modal,
-  // ModalHeader,
-  // ModalBody,
-  // ModalFooter,
-  Button,
-} from "@windmill/react-ui";
+
 
 import { Dialog, Transition } from "@headlessui/react";
 import Blockie from "./Blockie";
@@ -32,26 +26,28 @@ const Account = () => {
     <>
       {!isAuthenticated && (
         <Link to="/login">
-          <Button
+          <button
             className="w-full my-3 bg-white text-primary shadow-md hover:bg-blue-900"
             iconLeft={WalletIcon}
           >
             Connect Wallet
-          </Button>
+          </button>
         </Link>
       )}
 
       {isAuthenticated && (
         <div className="flex flex-row gap-2">
-          <Button
-            className="flex-1 shadow-lg bg-red-800"
+          <button
+            type="button"
+            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
             onClick={() => setIsModalOpen(true)}
           >
             <p style={{ marginRight: "5px" }}>
               {getEllipsisTxt(user?.attributes.ethAddress, 6)}
             </p>
             <Blockie currentWallet scale={3} />
-          </Button>
+          </button>
+          
         </div>
       )}
 
@@ -118,20 +114,20 @@ const Account = () => {
                 </Dialog.Description>
 
                 <div className="mt-4 flex gap-2">
-                  <Button
+                  <button
                     className="w-full sm:w-auto"
                     layout="outline"
                     onClick={closeModal}
                   >
                     Cancel
-                  </Button>
-                  <Button
+                  </button>
+                  <button
                     className="w-full sm:w-auto bg-primary"
                     onClick={logoutHandler}
                   >
                     {" "}
                     Disconnect Wallet
-                  </Button>
+                  </button>
                   {/* <button
                     type="button"
                     className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
