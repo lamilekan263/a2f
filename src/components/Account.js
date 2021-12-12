@@ -25,6 +25,7 @@ const Account = () => {
 
   const logoutHandler = () => {
     logout();
+    closeModal()
   };
 
   return (
@@ -50,13 +51,6 @@ const Account = () => {
               {getEllipsisTxt(user?.attributes.ethAddress, 6)}
             </p>
             <Blockie currentWallet scale={3} />
-          </Button>
-
-          <Button
-            className="flex-1 shadow-lg bg-red-800"
-            onClick={logoutHandler}
-          >
-            Log Out
           </Button>
         </div>
       )}
@@ -133,10 +127,7 @@ const Account = () => {
                   </Button>
                   <Button
                     className="w-full sm:w-auto bg-primary"
-                    onClick={() => {
-                      logout();
-                      closeModal();
-                    }}
+                    onClick={logoutHandler}
                   >
                     {" "}
                     Disconnect Wallet
@@ -154,8 +145,6 @@ const Account = () => {
           </div>
         </Dialog>
       </Transition>
-
-    
     </>
   );
 };
