@@ -6,9 +6,7 @@ import {
   ModalHeader,
   ModalBody,
   ModalFooter,
-  ModalButton,
-  SIZE,
-  ROLE,
+ 
 } from "baseui/modal";
 import { getExplorer } from "../helpers/networks";
 
