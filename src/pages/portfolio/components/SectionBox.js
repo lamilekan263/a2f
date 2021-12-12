@@ -22,7 +22,7 @@ const SectionBox = ({ title, bagdeContent, totalErc20 }) => {
         <CardBody>
           <p className="font-thin text-gray-500">{title}</p>
           <h5 className="my-3">${totalErc20 ? totalErc20[0].balance : "0"}</h5>
-          <Badge className="px-3 py-2 bg-secondary">
+          <Badge type="neutral" className="px-3 py-2">
             {totalErc20 ? totalErc20.length : "0"} {bagdeContent}
           </Badge>
           <div className="mt-3 flex gap-3">
