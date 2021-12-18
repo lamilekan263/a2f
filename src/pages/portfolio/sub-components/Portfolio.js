@@ -6,7 +6,7 @@ const Portfolio = ({ allErcBalance }) => {
 
 
   return (
-    <div className="my-3">
+    <div className="m-3">
       <div className="flex flex-col lg:flex-row gap-3">
         <SectionBox
           title="Total Balance"

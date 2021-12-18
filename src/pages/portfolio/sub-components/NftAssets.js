@@ -2,7 +2,7 @@ import React from 'react'
 
 const NftAssets = () => {
     return (
-        <div>
+        <div className="m-3">
             <h1>Nft Assets</h1>
         </div>
     )

@@ -11,13 +11,15 @@ import { getEllipsisTxt } from "../../../helpers/formatters";
 const HistoryCard = ({ tx }) => {
   const { account } = useMoralis();
 
+  // todo
+  
   return (
-    <Card>
+    <Card className={tx.receipt_status === "0" ? "bg-red-100" : "bg-green-100"}>
       <CardBody>
         {tx.receipt_status === "0" ? (
-          <Badge type="danger"
-       
-            className="my-2 bg-red-200 text-white text-xs"> Failed
+          <Badge type="danger" className="my-2 bg-red-200 text-white text-xs">
+            {" "}
+            Failed
           </Badge>
         ) : (
           <Badge

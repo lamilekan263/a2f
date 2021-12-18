@@ -2,6 +2,8 @@ import React from "react";
 import {  Card, CardBody } from "@windmill/react-ui";
 
 const AssetCard = ({ tokenAssets }) => {
+
+
   return (
     <Card className>
       <CardBody>
