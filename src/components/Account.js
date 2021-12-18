@@ -27,7 +27,7 @@ const Account = () => {
       {!isAuthenticated && (
         <Link to="/login">
           <button
-            className="w-full my-3 bg-white text-primary shadow-md hover:bg-blue-900"
+            className="nline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
             iconLeft={WalletIcon}
           >
             Connect Wallet
@@ -122,7 +122,7 @@ const Account = () => {
                     Cancel
                   </button>
                   <button
-                    className="w-full sm:w-auto bg-primary"
+                    className="nline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                     onClick={logoutHandler}
                   >
                     {" "}

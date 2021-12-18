@@ -1,6 +1,6 @@
 import React, { useEffect,useCallback } from "react";
 import {useMoralis, useMoralisWeb3Api } from "react-moralis"
-import { Card, Button, CardBody, Badge } from "@windmill/react-ui";
+import { Card,  CardBody, Badge } from "@windmill/react-ui";
 
 const SectionBox = ({ title, bagdeContent, totalErc20 }) => {
 
@@ -31,8 +31,19 @@ console.log(account)
             {totalErc20 ? totalErc20.length : "0"} {bagdeContent}
           </Badge>
           <div className="mt-3 flex gap-3">
-            <Button className="w-32">Send</Button>
-            <Button className="w-32">Receive</Button>
+             <button
+            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+            
+          >
+            Send
+            </button>
+             <button
+            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+            
+          >
+            Receive
+          </button>
+            
           </div>
         </CardBody>
       </div>

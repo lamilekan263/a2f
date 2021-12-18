@@ -12,9 +12,15 @@ const SectionBoxTwo = ({title, buttonTitle,text}) => {
 
         <Link
           to="/app/portfolio/assets"
-          className="my-3 px-3 py-2 bg-primary text-white"
+      
         >
-          {buttonTitle}
+           <button
+            className="inline-flex justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+            
+          >
+           {buttonTitle}
+          </button>
+         
         </Link>
       </div>
     </Card>

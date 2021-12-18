@@ -51,12 +51,11 @@ const Market = () => {
         </Button>
       ) : (
         <Link to="/login">
-          <Button
+          <button
             iconLeft={WalletIcon}
-            className="w-full my-3 bg-primary hover:bg-blue-900"
-          >
+           className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
             Connect Wallet
-          </Button>
+          </button>
         </Link>
       )}
     </div>

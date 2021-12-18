@@ -1,7 +1,7 @@
 import React from "react";
 
 import { useMoralis } from "react-moralis";
-import { Button, Label, Select, Input } from "@windmill/react-ui";
+import {  Label, Select, Input } from "@windmill/react-ui";
 
 // import { Input } from "baseui/input";
 import WalletIcon from "../components/icons/WalletIcon";
@@ -92,17 +92,17 @@ const BridgePage = () => {
               </div>
 
               {isAuthenticated ? (
-                <Button className="w-full my-3 bg-primary hover:bg-blue-900">
+                <button  className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                   Pay
-                </Button>
+                </button>
               ) : (
                 <Link to="/login">
-                  <Button
+                  <button
                     iconLeft={WalletIcon}
-                    className="w-full my-3 bg-primary hover:bg-blue-900"
-                  >
+                    className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
+                  
                     Connect Wallet
-                  </Button>
+                  </button>
                 </Link>
               )}
             </form>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { useHistory } from "react-router";
 
-import Logo from "../../assets/img/logo.jpg";
+import Logo from "../../assets/img/logo.png";
 import SEO from "../../components/Seo";
 
 const Login = () => {
@@ -72,7 +72,7 @@ const Login = () => {
       <div className="bg-primary h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <img className="mx-auto  w-auto" src={Logo} alt="a2zfin Logo" />
+            <img className="mx-auto  w-auto h-2/4" src={Logo} alt="a2zfin Logo" />
             <h2 className="mt-6  text-3xl font-extrabold text-gray-300">
               Hello,
             </h2>
