@@ -2,6 +2,7 @@
 
 import React from "react";
 import MobileSidebar from "./Sidebar/MobileSidebar";
+import LogoWHite from "../assets/img/logoWhiteIcon.png"
 
 import Account from "./Account";
 
@@ -13,10 +14,11 @@ function Header() {
 
         <MobileSidebar />
 
-        <h1 className="hidden  md:block font-bold">A2ZFIN</h1>
- <div className="justify-self-end">
+        <img className="h-16 w-16 hidden lg:block" src={LogoWHite} alt="" />
+
+        <div className="justify-self-end">
           <Account />
-        </div> 
+        </div>
       </div>
     </header>
   );

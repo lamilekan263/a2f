@@ -72,7 +72,7 @@ const Login = () => {
       <div className="bg-primary h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full space-y-8">
           <div>
-            <img className="mx-auto  w-auto h-2/4" src={Logo} alt="a2zfin Logo" />
+            <img className="mx-auto  w-auto h-32" src={Logo} alt="a2zfin Logo" />
             <h2 className="mt-6  text-3xl font-extrabold text-gray-300">
               Hello,
             </h2>
@@ -81,12 +81,13 @@ const Login = () => {
             </h2>
           </div>
 
-          <div>
+          <div className="flex flex-col gap-3">
             <div className="sm:hidden lg:block">
               <button
                 onClick={authenticateUserMetamask}
                 type="submit"
-                className="group hidden lg:block relative w-full flex  justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="w-full hidden lg:block justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+               
               >
                 <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
                 {isMetamaskLoading ? "Loading..." : "Connect Metamask"}
@@ -95,7 +96,7 @@ const Login = () => {
             <button
               onClick={authenticateUserWallet}
               type="submit"
-              className="mt-2  group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
             >
               <span className="absolute left-0 inset-y-0 flex items-center pl-3"></span>
               {isWalletLoading ? "Loading..." : "Connect Wallet"}

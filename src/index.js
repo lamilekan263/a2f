@@ -16,8 +16,8 @@ import { Windmill } from "@windmill/react-ui";
 
 // import { BaseProvider } from "baseui";
 
-const APP_ID = "BQ5FOuEiYG6kkCrGp84gb8mMxfWRbgBH8CJF77fC";
-const SERVER_URL = "https://otemivcnvv8c.usemoralis.com:2053/server";
+const APP_ID = "ZhBYTouGDPVru1uSqznsuQ2CN3WsBIjTCJX5KKWO";
+const SERVER_URL = "https://ogglzj6p7kxj.usemoralis.com:2053/server";
 
 const Application = () => {
   const isServerInfo = APP_ID && SERVER_URL ? true : false;

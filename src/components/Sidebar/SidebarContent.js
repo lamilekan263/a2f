@@ -2,16 +2,13 @@ import React from "react";
 import routes from "../../routes/sidebar";
 import { NavLink, Route } from "react-router-dom";
 
-import Logo from "../Logo";
 
 function SidebarContent() {
   return (
     <div className="  text-gray-500 dark:text-gray-400 pt-5">
-      <a className="" href="/app/overview">
-        <Logo />
-      </a>
+     
 
-      <ul className="mt-3">
+      <ul className="mt-5">
         {routes.map((route) =>
           route.isExternal ? (
             <li className="relative px-6 py-3 text-lg" key={route.name}>

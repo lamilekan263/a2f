@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 function MobileSidebar() {
   return (
-    <div className="w-56 relative">
-      <div className="w-full  inset-x-0 top-0 lg:hidden">
+    <div className="w-56 relative lg:hidden">
+      <div className="w-full  inset-x-0 top-0 ">
         <Popover>
           {({ open }) => (
             <>
