@@ -12,6 +12,8 @@ const HistoryCard = ({ tx }) => {
   const { account } = useMoralis();
 
   // todo
+
+  
   
   return (
     <Card className={tx.receipt_status === "0" ? "bg-red-100" : "bg-green-100"}>
@@ -106,7 +108,9 @@ const HistoryCard = ({ tx }) => {
               />
             </svg>
           </span>
-          <p className="text-sm text-gray-500">{tx.block_timestamp}</p>
+          <p className="text-sm text-gray-500">
+            {new Date(tx.block_timestamp).toGMTString()}
+          </p>
         </div>
       </CardBody>
     </Card>

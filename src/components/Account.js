@@ -126,7 +126,7 @@ const Account = () => {
                     onClick={logoutHandler}
                   >
                     {" "}
-                    Disconnect Wallet
+                    Disconnect
                   </button>
                   {/* <button
                     type="button"

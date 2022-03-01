@@ -3,8 +3,8 @@
 import React from "react";
 import { Tab } from "@headlessui/react";
 import SEO from "../../../components/Seo";
-import TokenAssets from "../sub-components/TokenAssets";
-import NftAssets from "../sub-components/NftAssets";
+import TokenAssets from "../pages/TokenAssets";
+import NftAssets from "../pages/NftAssets";
 
 import GobackButton from "../../../components/GobackButton";
 

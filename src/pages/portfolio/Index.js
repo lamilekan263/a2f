@@ -3,8 +3,8 @@
 import React, { useCallback  } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { Tab } from "@headlessui/react";
-import Portfolio from "./sub-components/Portfolio";
-import History from "./sub-components/History";
+import Portfolio from "./pages/Portfolio";
+import History from "./pages/History";
 import SEO from "../../components/Seo";
 import ThemedSuspense from "../../components/ThemedSuspense";
 
@@ -23,7 +23,7 @@ const Index = () => {
   const getAllErc20 = useCallback(async () => {
     try {
       setIsLoading(true);
-      const response = await account.getTokenBalances();
+      const response = await account.getTokenBalances({ chain: "rinkeby" });
 
       if (response) {
         setIsLoading(false);
@@ -46,7 +46,7 @@ const Index = () => {
     if (!isAuthenticated) setGetAllErcBalance(null);
   }, [isAuthenticated]);
 
-  console.log(allErcBalance);
+  // console.log(allErcBalance);
 
   if (isLoading) {
     return <ThemedSuspense />;
