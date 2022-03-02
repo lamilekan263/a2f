@@ -5,8 +5,8 @@ import routes from "../routes";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Main from "../containers/Main";
-import ThemedSuspense from "../components/ThemedSuspense";
 import { SidebarContext } from "../context/SidebarContext";
+import Spinner from "../components/spinner/Spinner";
 
 const Page404 = lazy(() => import("../pages/404"));
 
@@ -30,9 +30,10 @@ function Layout() {
         <Header />
 
         <Main>
+          
           <Sidebar />
 
-          <Suspense fallback={<ThemedSuspense />}>
+          <Suspense fallback={<Spinner />}>
             <Switch>
               {routes.map((route, i) => {
                 return route.component ? (

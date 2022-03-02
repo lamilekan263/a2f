@@ -1,7 +1,7 @@
 
 const routes = [
   {
-    path: "https://a2zdv.netlify.app/", // the url
+    path: "https://a2zfin.io/", // the url
     icon: "people-outline", // the component being exported from icons/index.js
     color: "",
     name: "P2P", 

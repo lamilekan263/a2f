@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
-import ThemedSuspense from "../../../components/ThemedSuspense";
+import Spinner from "../../../components/spinner/Spinner";
+
 //import useInfiniteScroll from "../../../hooks/useInfinitScroll";
 import HistoryCard from "../components/HistoryCard";
 
@@ -46,7 +47,7 @@ const History = () => {
 // }
 
   if (isLoading) {
-    return <ThemedSuspense />;
+    return <Spinner />;
   }
     if (!isAuthenticated) {
         return (

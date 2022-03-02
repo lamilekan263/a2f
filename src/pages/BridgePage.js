@@ -4,7 +4,7 @@ import { useMoralis } from "react-moralis";
 import {  Label, Select, Input } from "@windmill/react-ui";
 
 // import { Input } from "baseui/input";
-import WalletIcon from "../components/icons/WalletIcon";
+//import WalletIcon from "../components/icons/WalletIcon";
 import SEO from "../components/Seo";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const BridgePage = () => {
                 </Label>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
+                  className="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -98,7 +98,7 @@ const BridgePage = () => {
               ) : (
                 <Link to="/login">
                   <button
-                    iconLeft={WalletIcon}
+                    //iconLeft={WalletIcon}
                     className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
                   
                     Connect Wallet

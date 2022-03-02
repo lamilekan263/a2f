@@ -1,7 +1,7 @@
 import React from "react";
 import { useMoralis } from "react-moralis";
 import { Label, Input, Select, Button } from "@windmill/react-ui";
-import WalletIcon from "../../../components/icons/WalletIcon";
+//import WalletIcon from "../../../components/icons/WalletIcon";
 
 import { Link } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Market = () => {
       ) : (
         <Link to="/login">
           <button
-            iconLeft={WalletIcon}
+            // iconLeft={WalletIcon}
            className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-primary border border-transparent rounded-md hover:bg-blue-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500">
             Connect Wallet
           </button>

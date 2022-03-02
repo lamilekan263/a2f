@@ -5,13 +5,13 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { SidebarProvider } from "./context/SidebarContext";
-import ThemedSuspense from "./components/ThemedSuspense";
 import reportWebVitals from "./reportWebVitals";
 import { MoralisProvider } from "react-moralis";
 
 
 
 import { Windmill } from "@windmill/react-ui";
+import Spinner from "./components/spinner/Spinner";
 
 
 // import { BaseProvider } from "baseui";
@@ -40,7 +40,7 @@ ReactDOM.render(
   // <StyletronProvider value={engine}>
   <BrowserRouter>
     <SidebarProvider>
-      <Suspense fallback={<ThemedSuspense />}>
+      <Suspense fallback={<Spinner />}>
         <Windmill usePreferences light  >
           <Application />
         </Windmill>

@@ -26,6 +26,18 @@ const Portfolio = ({ allErcBalance }) => {
         buttonTitle="Coming Soon"
         text="You don’t have any savings yet. Do you want to make one?"
       />
+      <SectionBoxTwo
+        title="WALLET"
+        
+        buttonTitle="SEE ASSETS"
+        text="You don't have any assets yet. Do you want to buy one?"
+      />
+      <SectionBoxTwo
+        title="SAVINGS"
+        buttonTitle="Coming Soon"
+        text="You don’t have any savings yet. Do you want to make one?"
+      />
+      
       {/* <SectionBoxTwo title="LIQUIDITY" buttonTitle="CREATE LIQUIDITY" text="You don’t have liquidity yet. Do you want to make one?" /> */}
     </div>
   );

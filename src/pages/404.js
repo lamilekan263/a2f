@@ -1,7 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import SEO from "../components/Seo";
 
 function Page404() {
+
+  const history = useHistory()
+
+  
   return (
     <>
       <SEO title="404" />
@@ -14,7 +19,7 @@ function Page404() {
           <button
             layout="texted"
             className="text-pink-600 hover:underline dark:text-pink-300"
-            // onClick={() => goBack()}
+            onClick={() => history.goBack()}
           >
             go back
           </button>

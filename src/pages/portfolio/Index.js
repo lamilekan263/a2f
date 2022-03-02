@@ -6,7 +6,7 @@ import { Tab } from "@headlessui/react";
 import Portfolio from "./pages/Portfolio";
 import History from "./pages/History";
 import SEO from "../../components/Seo";
-import ThemedSuspense from "../../components/ThemedSuspense";
+import Spinner from "../../components/spinner/Spinner";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -49,7 +49,7 @@ const Index = () => {
   // console.log(allErcBalance);
 
   if (isLoading) {
-    return <ThemedSuspense />;
+    return <Spinner />;
   }
   return (
     <>

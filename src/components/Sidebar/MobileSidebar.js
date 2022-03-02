@@ -2,12 +2,21 @@
 
 import React from "react";
 import routes from "../../routes/sidebar";
+import {useLocation} from 'react-router-dom'
 
 import { Popover, Transition } from "@headlessui/react";
 
 import { Link } from "react-router-dom";
 
 function MobileSidebar() {
+  const location = useLocation()
+  
+   const pathMatchRoute = (route) => {
+     if (route === location.pathname) {
+       return true;
+     }
+   };
+ 
   return (
     <div className="w-56 relative lg:hidden">
       <div className="w-full  inset-x-0 top-0 ">
@@ -47,7 +56,9 @@ function MobileSidebar() {
                       key={route.name}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center p-2 m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                      className=
+                           "flex items-center p-2 m-3 transition duration-150 ease-in-out rounded-lg hover:bg-white hover:text-primary focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                      
                     >
                       <i>
                         <ion-icon
@@ -55,16 +66,18 @@ function MobileSidebar() {
                           name={route.icon}
                         ></ion-icon>
                       </i>
-                      <h1 className="px-3 text-xs text-white font-thin">
-                        {route.name}
-                      </h1>
+                      <h1 className="px-3 text-xs font-thin">{route.name}</h1>
                     </a>
                   ) : (
                     <Popover.Button
                       as={Link}
                       key={route.name}
                       to={route.path}
-                      className="flex items-center p-2 m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                      className={
+                        pathMatchRoute(route.path)
+                          ? "flex items-center p-2 m-3 transition duration-150 ease-in-out rounded-lg bg-white text-primary hover:text-primary focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50`"
+                          : "flex items-center p-2 m-3 transition duration-150 ease-in-out rounded-lg  hover:bg-white hover:text-primary focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
+                      }
                     >
                       <i>
                         <ion-icon
@@ -72,9 +85,7 @@ function MobileSidebar() {
                           name={route.icon}
                         ></ion-icon>
                       </i>
-                      <h1 className="px-3 text-xs text-white font-thin">
-                        {route.name}
-                      </h1>
+                      <h1 className="px-3 text-xs font-thin">{route.name}</h1>
                     </Popover.Button>
                   );
                 })}

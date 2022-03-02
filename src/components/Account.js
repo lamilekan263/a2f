@@ -8,7 +8,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import Blockie from "./Blockie";
 import { getEllipsisTxt } from "../helpers/formatters";
 import Address from "./Address";
-import WalletIcon from "./icons/WalletIcon";
+//import WalletIcon from "./icons/WalletIcon";
 import { Link } from "react-router-dom";
 
 const Account = () => {
@@ -27,8 +27,8 @@ const Account = () => {
       {!isAuthenticated && (
         <Link to="/login">
           <button
-            className="w-full justify-center px-4 py-2 text-sm font-medium text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-            iconLeft={WalletIcon}
+            className="w-full justify-center px-4 py-2 text-sm text-white bg-blue-900 border border-transparent rounded-md hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+            // iconLeft={WalletIcon}
           >
             Connect Wallet
           </button>

@@ -2,8 +2,9 @@
 
 import React, { useEffect } from "react";
 import { useMoralis, useERC20Balances } from "react-moralis";
+import Spinner from "../../../components/spinner/Spinner";
 
-import ThemedSuspense from "../../../components/ThemedSuspense";
+
 import AssetCard from "../components/AssetCard";
 
 const TokenAssets = () => {
@@ -14,7 +15,7 @@ const TokenAssets = () => {
     if (isAuthenticated) fetchERC20Balances();
   }, [isAuthenticated,fetchERC20Balances]);
   if (isLoading) {
-    return <ThemedSuspense />;
+    return <Spinner />;
   }
 
   console.log(data)

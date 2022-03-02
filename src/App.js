@@ -16,6 +16,8 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isWeb3Enabled]);
 
+ 
+
   return (
     <Switch>
       <Redirect exact from="/" to="/app/portfolio" />
